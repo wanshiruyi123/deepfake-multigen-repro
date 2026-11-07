@@ -3,6 +3,23 @@
 本目录是一次完整实验的可复现交付物：**代码 + 训练好的权重 + 逐图分数 + 结果表**。
 别人拿到后只需自备 4 份数据集，就能复算报告里的每一个数字；即使不重训，也能用附带权重直接复现评测与打分。
 
+## 0. 从 GitHub 获取
+
+```bash
+git clone https://github.com/wanshiruyi123/deepfake-multigen-repro.git
+cd deepfake-multigen-repro
+
+# 权重（900MB）在 Release，解压到仓库根目录
+gh release download v1.0-weights --pattern "weights-*.zip"
+unzip "weights-*.zip" -d .
+
+cd models && sha256sum -c SHA256SUMS.txt && cd ..   # 八份权重校验
+python 代码/verify_env.py                          # 应输出「通过」，漂移 0/5
+```
+
+> 本机网络限制：`github.com:443` 的 git 协议被拦，`git push` 会报 `CONNECT tunnel failed 502`。
+> 仓库内容是经 Git Data API 写入的；后续更新用 `python 代码/push_via_api.py`（见文件头注释）。
+
 ---
 
 ## 1. 目录结构
@@ -12,9 +29,10 @@ deepfake多生成器实验报告/
 ├── README.md                  ← 本文件（复现步骤）
 ├── 实验报告.md                 ← 实验结论与分析
 ├── requirements.txt            ← 依赖（含版本配对说明）
-├── 代码/                       ← 30 个脚本，全部可独立运行
+├── 代码/                       ← 31 个 .py + 1 个 .sh，全部可独立运行
 │   ├── paths.py               ← 数据集路径解析（环境变量驱动，不用改源码）
 │   ├── verify_env.py          ← 环境自检 + 数值复现校验（先跑这个）
+│   ├── push_via_api.py        ← 更新本仓库（git push 被墙时的替代通道）
 │   ├── build_manifest.py      ← 扫描四数据集 → manifest.csv
 │   ├── make_split.py          ← group-aware 切分 → split_{train,val,test}.csv
 │   ├── train_multi.py         ← 6 个训练配置（--domains gan|swap|diff）
