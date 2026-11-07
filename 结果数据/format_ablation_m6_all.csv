@@ -1,0 +1,7 @@
+cell,auc_raw,auc_unified,delta,format
+gan,0.94925,0.94829,0.001,real=.jpg fake=.jpg
+swap_faceswap,0.85787,0.86479,-0.0069,real=.jpg fake=.png
+swap_simswap,0.87422,0.87263,0.0016,real=.jpg fake=.png
+swap_dfl,0.67935,0.67677,0.0026,real=.jpg fake=.png
+diffusion,0.91108,0.91398,-0.0029,real=.jpg fake=.png
+celebdf,0.54015,0.53861,0.0015,real=.jpg fake=.jpg

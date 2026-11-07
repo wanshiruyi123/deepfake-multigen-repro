@@ -1,0 +1,7 @@
+cell,best_in_domain,best_cross,gap,cross_model
+celebdf,,0.617,,m5_gan_diff
+diffusion,0.983,0.864,-0.119,m4_gan_swap
+gan,0.985,0.856,-0.129,m3_diff
+swap_dfl,0.681,0.632,-0.048,m5_gan_diff
+swap_faceswap,0.911,0.747,-0.164,m5_gan_diff
+swap_simswap,0.907,0.875,-0.032,m3_diff

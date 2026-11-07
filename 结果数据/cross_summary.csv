@@ -1,0 +1,7 @@
+model,n_domain,in_domain,cross_domain,all6_mean,worst,worst_cell
+m1_gan,1,0.9845,0.6407,0.698,0.5995,celebdf
+m2_swap,3,0.833,0.7138,0.7734,0.4863,celebdf
+m3_diff,1,0.9833,0.7272,0.7699,0.5542,celebdf
+m4_gan_swap,4,0.849,0.7235,0.8072,0.5826,celebdf
+m5_gan_diff,2,0.9683,0.7006,0.7899,0.6173,celebdf
+m6_all,5,0.8601,0.5307,0.8052,0.5307,celebdf

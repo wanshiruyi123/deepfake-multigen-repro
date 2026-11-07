@@ -1,0 +1,23 @@
+# 主流程（训练 / 评测 / 打分）所需
+# 实测组合：Python 3.13 + cu128 轮子 + RTX 5060 Laptop (sm_120)
+# 注意：torch 与 torchvision 版本必须成对装，torch 2.9.x 只能配 torchvision 0.24.x，
+#       装 0.26 会在 torchvision.ops.nms 处报 symbol 不存在。
+
+# --- 先装 CUDA 版 torch（按自己显卡的 CUDA 版本改 cu128）---
+# pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128
+# 国内镜像（阿里云 pytorch-wheels，需直接给 whl 直链，-i 不识别 +cu128 后缀）
+torch==2.9.1+cu128
+torchvision==0.24.1+cu128
+
+numpy==2.5.4
+pandas==3.1.1
+opencv-python-headless==5.0.0.93
+pillow==13.0.0
+tqdm==4.70.1
+
+# 仅 代码/calibrate.py（权重校准）需要，不装不影响主流程
+# scikit-learn==1.7.2
+
+# 仅早期 HuggingFace 通用模型流水线（fetch_models.py / batch_detect.py）需要
+# onnxruntime==1.31.1
+# transformers==5.22.1

@@ -1,0 +1,12 @@
+﻿dataset,method,domain,label,count
+140k,gan,gan,0,70000
+140k,gan,gan,1,70000
+CelebDF,celebreal,swap,0,1216
+CelebDF,celebreal,swap,1,1984
+DF40,deepfacelab,swap,0,1547
+DF40,deepfacelab,swap,1,3122
+DF40,dit,diffusion,1,31885
+DF40,faceswap,swap,1,24634
+DF40,simswap,swap,1,24790
+real-vs-fake,gan,gan,0,60000
+real-vs-fake,gan,gan,1,60000

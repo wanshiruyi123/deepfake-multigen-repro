@@ -1,0 +1,24 @@
+# 权重约 900MB，走 Release 附件，不进 git 历史
+# 只保留说明与校验和，其余内容全部忽略
+models/*
+!models/README.md
+!models/SHA256SUMS.txt
+
+# 只在仓库根目录生成的运行产物（结果数据/ 里的归档表必须保留，故用 / 锚定）
+/manifest.csv
+/split_train.csv
+/split_val.csv
+/split_test.csv
+/cross_eval.csv
+/sharpness_cache.csv
+/scores_*.csv
+/matched_auc.csv
+/auc_ci.csv
+/cross_summary.csv
+/generalization_gap.csv
+/train_*.log
+/*.log
+/样例/smoke_result.csv
+__pycache__/
+*.pyc
+.venv/
